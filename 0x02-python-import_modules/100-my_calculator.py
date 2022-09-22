@@ -15,11 +15,11 @@ if "__main__" == __name__:
             exit(1)
         else:
             if op == '+':
-                print("{} {} {} = {}".format(a, operator, b, add(a, b)))
+                print("{} {} {} = {}".format(a, op, b, add(a, b)))
             elif op == '-':
-                print("{} {} {} = {}".format(a, operator, b, sub(a, b)))
+                print("{} {} {} = {}".format(a, op, b, sub(a, b)))
             elif op == '*':
-                print("{} {} {} = {}".format(a, operator, b, mul(a, b)))
+                print("{} {} {} = {}".format(a, op, b, mul(a, b)))
             elif op == '/':
-                print("{} {} {} = {}".format(a, operator, b, div(a, b)))
+                print("{} {} {} = {}".format(a, op, b, div(a, b)))
             exit(0)
