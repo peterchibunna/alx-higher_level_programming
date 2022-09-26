@@ -10,9 +10,8 @@ void print_python_list_info(PyObject *o)
 	PyListObject *list;
 	Py_ssize_t size, i;
 	PyObject *object;
-	struct _typeobject *type;
 
-	if (strcmp(o->ob_type->tp_name, "list") == 0)
+	if (0 == strcmp(o->ob_type->tp_name, "list"))
 	{
 		list = (PyListObject *)o;
 		size = list->ob_base.ob_size;
