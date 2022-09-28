@@ -1,14 +1,8 @@
 #!/usr/bin/python3
 def roman_to_int(ss):
-    romans = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    sum = 0
-
-    for index, char in enumerate(ss):
-        current_num = romans[char]
-        last_num = romans[ss[index - 1]]
-
-        if index != 0 and last_num < current_num:
-            sum += current_num - 2 * last_num
-        else:
-            sum += current_num
-    return sum
+    a, r = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500,
+            "M": 1000, "IV": -2, "IX": -2, "XL": -20, "XC": -20,
+            "CD": -200, "CM": -200}, 0
+    for d, e in a.items():
+        r += s.count(d) * e
+    return r
