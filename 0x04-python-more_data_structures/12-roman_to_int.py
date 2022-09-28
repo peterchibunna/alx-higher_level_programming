@@ -8,7 +8,8 @@ def roman_to_int(ss):
     ss = ss.replace("XC", "LXXXX")
     ss = ss.replace("CD", "CCCC")
     ss = ss.replace("CM", "DCCCC")
-    # replace those ambiguous ones that go backward and forward to always forward
+    # replace those ambiguous ones that go backward
+    # and forward to always forward
     # ie. the forwards only
     for idx, i in enumerate(ss):
         total += romans[i]
