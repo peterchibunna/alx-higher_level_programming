@@ -11,5 +11,5 @@ def roman_to_int(ss):
     # replace those ambiguous ones that go backward and forward to always forward
     # ie. the forwards only
     for idx, i in enumerate(ss):
-        total += roman[i]
+        total += romans[i]
     return abs(total)
