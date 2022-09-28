@@ -4,5 +4,5 @@ def roman_to_int(ss):
             "M": 1000, "IV": -2, "IX": -2, "XL": -20, "XC": -20,
             "CD": -200, "CM": -200}, 0
     for d, e in a.items():
-        r += s.count(d) * e
+        r += ss.count(d) * e
     return r
