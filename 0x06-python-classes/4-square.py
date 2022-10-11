@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module: 1-square
+Module: 4-square
 Defines a Square of size: size
 """
 
@@ -16,12 +16,26 @@ class Square(object):
         Args:
             size: Description of `size' default to 0
         """
-        if type(size) is not int:
+        self.size = size
+
+    @property
+    def size(self):
+        """
+        Retrieve the size of the Square
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        Set the size of the square
+        """
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.__size = value
 
     def area(self):
         """
