@@ -51,10 +51,13 @@ class Square(object):
         """
         Prints the square based on the size using `#'
         """
-        print("\n" * self.__position[1], end="")
-        hashes = [" " * self.__position[0] + "#" * self.__size
+        if self.__size == 0:
+            print()
+        else:
+            print("\n" * self.__position[1], end="")
+            hashes = [" " * self.__position[0] + "#" * self.__size
                   for i in range(self.__size)]
-        print("\n".join(hashes))
+            print("\n".join(hashes))
         # for i in range(self.__size):
         #    for j in range(self.__size):
         #        print("#", end="")
