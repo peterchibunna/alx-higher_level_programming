@@ -56,7 +56,7 @@ class Square(object):
         else:
             print("\n" * self.__position[1], end="")
             hashes = [" " * self.__position[0] + "#" * self.__size
-                  for i in range(self.__size)]
+                      for i in range(self.__size)]
             print("\n".join(hashes))
         # for i in range(self.__size):
         #    for j in range(self.__size):
