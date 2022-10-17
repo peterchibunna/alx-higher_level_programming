@@ -22,6 +22,9 @@ class Rectangle(object):
                 s += "\n"
         return s
 
+    def __repr__(self):
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
+
     @property
     def width(self):
         return self.__width
@@ -52,6 +55,6 @@ class Rectangle(object):
         return self.width * self.height
 
     def perimeter(self):
-        if self.width is 0 or self.height is 0:
+        if self.width == 0 or self.height == 0:
             return 0
         return (self.width + self.height) * 2
