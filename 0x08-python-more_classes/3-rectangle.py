@@ -14,8 +14,12 @@ class Rectangle(object):
 
     def __str__(self):
         s = ""
-        for y in range(self.height):
-            s += ("#" * self.width) +  "\n" if y is not self.height - 1 else ""
+        if self.__height == 0 or self.width == 0:
+            return s
+        for i in range(self.__height):
+            s += ("#" * self.__width)
+            if i is not self.__height - 1:
+                s += "\n"
         return s
 
     @property
