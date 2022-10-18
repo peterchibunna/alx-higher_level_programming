@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains a definition for a function that 
+Contains a definition for a function that
 multiplies 2 matrices by using the module NumPy
 """
 import numpy as np
