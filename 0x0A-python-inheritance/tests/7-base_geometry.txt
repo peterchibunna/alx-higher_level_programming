@@ -2,10 +2,10 @@ Tests for the docs
 ==============
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> BaseGeometry.__doc__
-'A BaseGeometry class with area'
+'\n    A BaseGeometry class with area\n    '
 
 >>> BaseGeometry.integer_validator.__doc__
-'Validate the value passed as integer'
+'\n        Validate the value passed as integer\n        '
 
 Other tests
 =============
@@ -48,3 +48,9 @@ With other data type: eg. tuple
 Traceback (most recent call last):
 ...
 TypeError: data must be an integer
+
+With no parameter
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
