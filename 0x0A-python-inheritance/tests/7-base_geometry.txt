@@ -4,6 +4,9 @@ Tests for the docs
 >>> BaseGeometry.__doc__
 'A BaseGeometry class with area'
 
+>>> BaseGeometry.integer_validator.__doc__
+'Validate the value passed as integer'
+
 Other tests
 =============
 with positives integers
