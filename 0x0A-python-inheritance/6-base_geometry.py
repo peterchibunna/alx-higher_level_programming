@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module: 4-base_geometry
+Module: 6-base_geometry
 An empty BaseGeometry class
 """
 

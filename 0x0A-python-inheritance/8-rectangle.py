@@ -2,7 +2,8 @@
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 """
-Module: 8-rectangle
+Module: 
+8-rectangle
 """
 
 
