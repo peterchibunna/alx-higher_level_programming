@@ -4,6 +4,8 @@ Tests for the docs
 >>> MyList.__doc__
 'that prints the list, but sorted (ascending sort)'
 
+Other tests
+=============
 >>> my_list = MyList()
 >>> isinstance(my_list, list)
 True

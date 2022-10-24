@@ -1,0 +1,47 @@
+Tests for the docs
+==============
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> BaseGeometry.__doc__
+'An empty BaseGeometry class'
+
+Other tests
+=============
+with positives integers
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("height", 35)
+
+with negative integer
+>>> bg.integer_validator("temperature", -37)
+Traceback (most recent call last):
+...
+ValueError: temperature must be greater than 0
+
+with more than 2 arguments
+>>> bg.integer_validator("scores", 10, 31)
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
+with infinite integer
+>>> bg.integer_validator("i", int('inf'))
+Traceback (most recent call last):
+...
+ValueError: invalid literal for int() with base 10: 'inf'
+
+With boolean
+>>> bg.integer_validator("name", True)
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+With String
+>>> bg.integer_validator("name", "Peter")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+With other data type: eg. tuple
+>>> bg.integer_validator("data", (16, 33,))
+Traceback (most recent call last):
+...
+TypeError: data must be an integer
