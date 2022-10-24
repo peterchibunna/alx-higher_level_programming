@@ -7,10 +7,10 @@ with class BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class that inherits from BaseGeometry"""
+    """Rectangle class that inherits BaseGeometry"""
 
     def __init__(self, width, height):
-        """Initialize the attributes: width and height"""
+        """Initializes the attributes: width and height"""
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
