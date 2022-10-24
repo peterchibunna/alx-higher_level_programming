@@ -2,7 +2,7 @@ Tests for the docs
 ==============
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> BaseGeometry.__doc__
-'An empty BaseGeometry class'
+'A BaseGeometry class with area'
 
 Other tests
 =============
