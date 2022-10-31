@@ -184,7 +184,7 @@ class Base:
         turtle.bgcolor("white")
         t.color("blue")
         t.shape("square")
-        t.pensize(4)
+        t.pensize(5)
 
         for i in (list_rectangles + list_squares):
             t.penup()
