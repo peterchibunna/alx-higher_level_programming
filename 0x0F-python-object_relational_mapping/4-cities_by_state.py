@@ -20,8 +20,8 @@ def main():
                            passwd=password, db=database, charset="utf8")
     cur = conn.cursor()
     cur.execute(
-        "SELECT c.`id`, c.`name`, s.`name` FROM `states` s LEFT JOIN cities c "
-        "ON c.state_id=s.id ORDER BY c.`id` ASC")
+        "SELECT c.`id`, c.`name`, s.`name` FROM `cities` c LEFT JOIN "
+        "`states` s ON c.state_id=s.`id` ORDER BY c.`id` ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
