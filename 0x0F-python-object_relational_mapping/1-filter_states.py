@@ -21,7 +21,8 @@ def main():
         port=3306, user=username, passwd=password, db=database, charset="utf8")
     cur = conn.cursor()
     cur.execute(
-        "SELECT * FROM `states` WHERE `name` LIKE 'N%' ORDER BY `id` ASC")
+        "SELECT * FROM `states` WHERE `name` LIKE BINARY 'N%'"
+        "ORDER BY `id` ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
