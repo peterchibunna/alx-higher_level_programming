@@ -11,7 +11,6 @@ def main():
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    search = sys.argv[4]
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.format(
             username, password, database), pool_pre_ping=True)
@@ -20,9 +19,10 @@ def main():
     session = Session(engine)
     louisiana = State(name='Louisiana')
     session.add(louisiana)
-    added_data = session.query(State).filter(State.name == 'Louisiana').first()
     session.commit()
-    print('{}'.format(added_data.id))
+    session.flush()
+    # added_data = session.query(State).filter(State.name == 'Louisiana').first()
+    print('{}'.format(louisiana.id))
     session.close()
 
 
