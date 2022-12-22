@@ -19,7 +19,7 @@ def main():
 
     session = Session(engine)
 
-    for city in session.query(City).order_by(State.id).all():
+    for city in session.query(City).order_by(City.id).all():
         print("{}: {} -> {}".format(city.id, city.name, city.state.name))
 
     session.commit()
