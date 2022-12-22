@@ -20,9 +20,8 @@ def main():
     session = Session(engine)
     louisiana = State(name='Louisiana')
     session.add(louisiana)
-    session.commit()
-
     added_data = session.query(State).filter(State.name == 'Louisiana').first()
+    session.commit()
     print('{}'.format(added_data.id))
     session.close()
 
