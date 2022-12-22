@@ -21,7 +21,8 @@ def main():
     session.add(louisiana)
     session.commit()
     session.flush()
-    # added_data = session.query(State).filter(State.name == 'Louisiana').first()
+    # added_data = session.query(State)
+    # .filter(State.name == 'Louisiana').first()
     print('{}'.format(louisiana.id))
     session.close()
 
