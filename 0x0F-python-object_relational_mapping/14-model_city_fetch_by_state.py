@@ -8,8 +8,8 @@ def main():
     from model_state import Base, State
     from model_city import City
     from sqlalchemy import create_engine
-    from sqlalchemy.orm import sessionmaker
-    # from sqlalchemy.orm import Session
+    # from sqlalchemy.orm import sessionmaker
+    from sqlalchemy.orm import Session
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -18,8 +18,7 @@ def main():
             username, password, database), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    Session1 = sessionmaker(bind=engine)
-    session = Session1(engine)
+    session = Session(engine)
     for city, state in session.query(City, State).filter(
             City.state_id == State.id).order_by(City.id):
         print("{}: ({}) {}".format(state.name, city.id, city.name))
