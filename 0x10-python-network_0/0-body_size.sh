@@ -1,3 +1,3 @@
 #!/bin/bash
 # Description of task
-curl -sI "$1" | grep content-length | awk '{print $2}'
+curl -sI "$1" | grep Content-Length | awk '{print $2}'
