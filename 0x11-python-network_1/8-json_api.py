@@ -15,6 +15,9 @@ if __name__ == "__main__":
     req = requests.post(server, data=post)
     response = req.json()
     if response:
-        print('[{}] {}'.format(response.get('id'), response.get('name')))
+        if response.get('id', None) is not None:
+            print('[{}] {}'.format(response.get('id'), response.get('name')))
+        else:
+            print("Not a valid JSON")
     else:
         print('No result')
