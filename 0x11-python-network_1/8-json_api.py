@@ -6,18 +6,15 @@ if __name__ == "__main__":
     import sys
 
     server = 'http://0.0.0.0:5000/search_user'
-    try:
-        search = sys.argv[1]
-    except IndexError:
-        search = ''
+    search = sys.argv[1] if len(sys.argv) > 1 else ""
 
-    post = {'q': search}
+    post = {"q": search}
     req = requests.post(server, data=post)
-    response = req.json()
-    if response:
-        if response.get('id', None) is not None:
+    try:
+        response = req.json()
+        if response != {}:
             print('[{}] {}'.format(response.get('id'), response.get('name')))
         else:
-            print("Not a valid JSON")
-    else:
-        print('No result')
+            print('No result')
+    except ValueError:
+        print("Not a valid JSON")
