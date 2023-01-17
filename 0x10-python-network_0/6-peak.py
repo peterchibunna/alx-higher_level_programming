@@ -4,18 +4,21 @@
 
 def find_peak(list_of_integers):
     """Finds a peak in list_of_integers"""
-    points = list_of_integers
-    try:
-        size = points.__len__()
-        if size == 0:
-            return None
-    except TypeError as e:
-        return None
-    highs = sorted(points)
 
-    for high in reversed(highs):
-        if 0 < points.index(high) < size:
-            return high
-    if sorted(highs)[0] == list(reversed(sorted(highs)))[0]:
-        return sorted(highs)[0]
-    return None
+    if list_of_integers is None or list_of_integers == []:
+        return None
+    lo = 0
+    hi = len(list_of_integers)
+    mid = ((hi - lo) // 2) + lo
+    mid = int(mid)
+    if hi == 1:
+        return list_of_integers[0]
+    if hi == 2:
+        return max(list_of_integers)
+    if list_of_integers[mid] >= list_of_integers[mid - 1] and \
+            list_of_integers[mid] >= list_of_integers[mid + 1]:
+        return list_of_integers[mid]
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
+        return find_peak(list_of_integers[mid:])
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
+        return find_peak(list_of_integers[:mid])
