@@ -9,7 +9,7 @@ request(url, function (err, response, body) {
   } else if (response.statusCode === 200) {
     const films = JSON.parse(body).results;
     let count = 0;
-    let searchElement = '18';
+    const searchElement = '18';
     for (const filmIndex in films) {
       const filmCharacters = films[filmIndex].characters;
       for (const charIndex in filmCharacters) {
