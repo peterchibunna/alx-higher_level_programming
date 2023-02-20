@@ -3,4 +3,4 @@ $(document).ready(function (e) {
   $.get(url, function (person) {
     $('DIV#character').text(person.name);
   });
-})
+});

@@ -5,4 +5,4 @@ $(document).ready(function (e) {
     // we cannot access the response
     $('DIV#hello').text(response.hello);
   });
-})
+});

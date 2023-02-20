@@ -9,5 +9,4 @@ $(document).ready(function (e) {
   $('DIV#clear_list').on('click', function (click) {
     list.html('');
   });
-
-})
+});
